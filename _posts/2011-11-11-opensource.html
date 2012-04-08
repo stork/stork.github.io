@@ -1,0 +1,19 @@
+---
+title: Opensource
+description: Opensource Projects
+category: opensource
+tags:
+ - section
+permalink: /:categories/
+---
+<h1>Opensource</h1>
+<p>opensource projects</p>
+
+{% for post in site.tags.page %}
+	{% if post.category == page.category %}
+
+<h2>{{ post.title }} - {{ post.description }}</h2>
+{{ post.content }}
+
+	{% endif %}
+{% endfor %}
