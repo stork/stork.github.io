@@ -9,7 +9,7 @@
 			<a class="brand" href="/">Lubomír Štork</a>
 			<div class="nav-collapse">
 				<ul class="nav">
-				{% for post in site.tags.section %}
+				{% for post in site.tags.section reversed %}
 					{% assign current = nil %}
 					{% if page.categories[0] == post.categories[0] %}
 						{% assign current = 'active' %}
