@@ -1,7 +1,7 @@
 ---
-layout: ~
+layout: nil
 ---
-{% include jquery.min.js %}
-{% include bootstrap.min.js %}
-{% include prettify.js %}
-{% include app.js %}
+{% include js/jquery.min.js %}
+{% include js/bootstrap.min.js %}
+{% include js/prettify.js %}
+{% include js/site.js %}

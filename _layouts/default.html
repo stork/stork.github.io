@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>{{ page.title }} &raquo; Lubomír Štork</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="{{ page.description }}">
+{% include meta.html %}
 	<link href="/assets/css/all.css" rel="stylesheet">
 	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
-	{% include navigation.html %}
-<!-- SUB posts.categories.{page.category} -->
+{% include navigation.html %}
 	<div class="container">
-		{{ content }}
+
+{{ content }}
+
 	</div>
 	<script src="/assets/js/all.js"></script>
 </body>

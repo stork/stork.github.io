@@ -2,3 +2,9 @@ permalink: /:categories/:title.html
 auto: true
 pygments: true
 layout: default
+description: "Software Architect in Web Development World"
+keywords:
+ - Software Architect
+ - Web Developer
+ - CakePHP Developer
+main_title: "Lubomír Štork"

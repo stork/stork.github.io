@@ -1,7 +1,7 @@
 ---
-layout: ~
+layout: nil
 ---
-{% include bootstrap.min.css %}
-{% include bootstrap-responsive.min.css %}
-{% include prettify.css %}
-{% include site.css %}
+{% include css/bootstrap.min.css %}
+{% include css/bootstrap-responsive.min.css %}
+{% include css/prettify.css %}
+{% include css/site.css %}
