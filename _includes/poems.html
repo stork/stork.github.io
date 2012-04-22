@@ -1,6 +1,11 @@
 			<div class="sidebar-nav">
 				<ul class="nav nav-list">
-					<li><a href="#">Link One</a></li>
-					<li class="active"><a href="#">Link Two</a></li>
+					{% for post in site.tags.poem reversed %}
+						{% assign current = nil %}
+						{% if page.url == post.url %}
+							{% assign current = 'active' %}
+						{% endif %}
+						<li class="{{ current }}"><a href="{{ post.url }}">{{ post.title }}</a></li>
+					{% endfor %}
 				</ul>
 			</div>
