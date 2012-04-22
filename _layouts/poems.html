@@ -1,9 +1,16 @@
 ---
 layout: base
 ---
-<div class="container">
-	<h2>{{ page.title }}</h2>
-	<pre>{{ content }}</pre>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span3">
+{% include poems.html %}
+		</div>
+		<div class="span9">
+			<h2>{{ page.title }}</h2>
+			<pre>{{ content }}</pre>
+		</div>
+	</div>
 	<hr>
 	<footer>
 		<p>
