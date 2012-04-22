@@ -4,12 +4,14 @@ layout: base
 <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="span3">
-{% include navigation-poems.html %}
+{% include poems/navigation.html %}
 		</div>
 		<div class="span9">
-{% include pager-poems.html %}
-			<h2>{{ page.title }}</h2>
-			<pre>{{ content }}</pre>
+{% include poems/pager.html %}
+
+<h2>{{ page.title }}</h2>
+<pre>{{ content }}</pre>
+
 		</div>
 	</div>
 	<hr>
