@@ -1,6 +1,6 @@
 			<div class="sidebar-nav">
 				<ul class="nav nav-list">
-					{% for post in site.tags.poem reversed %}
+					{% for post in site.tags.poem %}
 						{% assign current = nil %}
 						{% if page.url == post.url %}
 							{% assign current = 'active' %}
