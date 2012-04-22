@@ -1,20 +1,20 @@
 			<ul class="pager">
 				{% if page.previous.url and page.previous.tags contains 'poem' %}
 				<li class="previous">
-					<a href="{{ page.previous.url }}" rel="previous" title="{{ page.previous.title }}">&larr; Novější</a>
+					<a href="{{ page.previous.url }}" rel="previous" title="{{ page.previous.title }}">&larr; Starší</a>
 				</li>
 				{% else %}
 				<li class="previous disabled">
-					<a href="#">&larr; Předchozí</a>
+					<a href="#">&larr; Starší</a>
 				</li>
 				{% endif %}
 				{% if page.next.url and page.next.tags contains 'poem' %}
 				<li class="next">
-					<a href="{{ page.next.url }}" rel="next" title="{{ page.next.title }}">Starší &rarr;</a>
+					<a href="{{ page.next.url }}" rel="next" title="{{ page.next.title }}">Novější &rarr;</a>
 				</li>
 				{% else %}
 				<li class="next disabled">
-					<a href="#">Další &rarr;</a>
+					<a href="#">Novější &rarr;</a>
 				</li>
 				{% endif %}
 			</ul>
