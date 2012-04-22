@@ -16,6 +16,7 @@
 {% endif %}
 	<meta name="robots" content="{{ page.index }}index, {{ page.follow }}follow" />
 {% if page.date %}
-	<meta http-equiv="date" content="{{ page.date | date: '%A, %d  %Y %H:%M:%S GMT' }}" />
+	<meta http-equiv="date" content="{{ page.date | date: '%a, %d %b %Y %H:%M:%S GMT' }}" />
 {% endif %}
+	<meta http-equiv="last-modified" content="{{ site.time | date: '%a, %d %b %Y %H:%M:%S GMT' }}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
