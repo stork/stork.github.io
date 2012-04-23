@@ -1,6 +1,7 @@
 ---
 layout: base
 ---
+{% include navigation.html %}
 <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="span3">
@@ -19,11 +20,11 @@ layout: base
 	<hr>
 	<footer>
 		<p>
-			&copy; 2012 Lubomír Štork
+			&copy; 2008 - {{ site.time | date: '%Y' }} Lubomír Štork
 			<span class="pull-right">
-				Released under the terms of the <a href="http://sam.zoy.org/wtfpl/COPYING">WTFPL</a>,
-				as published by <a href="http://sam.zoy.org/wtfpl/">Sam Hocevar</a>.
+				Uvolněno pod licencí <a href="http://sam.zoy.org/wtfpl/">WTFPL</a>.
 			</span>
 		</p>
 	</footer>
 </div>
+<script src="/assets/js/all.js"></script>
