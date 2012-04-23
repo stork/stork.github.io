@@ -7,5 +7,6 @@
 						{% endif %}
 						<li class="{{ current }}"><a href="{{ post.url }}">{{ post.title }}</a></li>
 					{% endfor %}
+					<li>Celkem <span class="badge badge-success">{{ site.tags.poem | size }}</span></li>
 				</ul>
 			</div>
