@@ -1,0 +1,26 @@
+---
+layout: default
+title: Poetry (Czech)
+description: Poetry in Czech language
+---
+<div class="page-header">
+	<h1>Poezie</h1>
+</div>
+<div class="well">
+	<ul>
+		<li>jedná se pouze o amatérské <strong>pokusy</strong> o poetično</li>
+		<li>nevydávám je za umělecká díla</li>
+		<li>neposkytuji záruku na jejich kvalitu</li>
+		<li>zříkám se odpovědnosti za případné následky na čtenářích</li>
+		<li>vše, co v této sekci najdete, smíte šířit a/nebo upravovat dle vlastního uvážení, ve smyslu licence <a href="http://sam.zoy.org/wtfpl/">WTFPL</a></li>
+		<li>ani při jednom z <span class="badge badge-success">{{ site.tags.poem | size }}</span> výronů mé tvořivosti nebylo usmrceno ani netrpělo žádné zvíře</li>
+	</ul>
+</div>
+{% for post in site.tags.poem %}
+<div>
+<h2>{{ post.title }}</h2>
+<!-- ID: {{ post.id }} -->
+<!-- URL: {{ post.url }} -->
+<pre>{{ post.content }}</pre>
+</div>
+{% endfor %}
