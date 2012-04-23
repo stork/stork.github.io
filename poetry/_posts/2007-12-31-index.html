@@ -24,6 +24,6 @@ tags:
 		{% for post in site.tags.poem limit:1 %}
 		<li>zatím <a href="{{ post.url }}" title="{{ post.title }}">poslední</a> kousek</li>
 		{% endfor %}
-		<li><a href="all-in-one.html" target="_blank">všech <span class="badge badge-success">{{ site.tags.poem | size }}</span></a> na jedné straně</li>
+		<li><a href="all-in-one.html" target="_blank">všechny</a> na jedné straně <span class="badge badge-success">{{ site.tags.poem | size }}</span></li>
 	</ul>
 </div>
