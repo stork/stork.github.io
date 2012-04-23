@@ -4,11 +4,6 @@ layout: base
 {% include navigation.html %}
 <div class="container">
 	{{ content }}
-	<hr>
-	<footer>
-		<p>
-			&copy; 2008 - {{ site.time | date: '%Y' }} Lubomír Štork
-		</p>
-	</footer>
+{% include footer.html %}
 </div>
 <script src="/assets/js/all.js"></script>
