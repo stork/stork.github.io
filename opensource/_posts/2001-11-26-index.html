@@ -1,5 +1,5 @@
 ---
-layout: opensource
+layout: default
 title: Opensource
 description: Opensource Projects
 tags:
@@ -9,7 +9,7 @@ tags:
 	<h1>Opensource</h1>
 </div>
 
-{% for post in site.tags.page %}
+{% for post in site.tags.page reversed %}
 <div>
 	<h2>{{ post.title }}</h2>
 	{{ post.content }}
