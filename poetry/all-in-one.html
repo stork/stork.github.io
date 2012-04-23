@@ -1,0 +1,16 @@
+---
+layout: default
+title: Poezie
+description: Poezie, vše na jedné straně
+---
+<div class="page-header">
+	<h1>Poezie (kompletní)</h1>
+</div>
+<p>Uvolněno pod licencí <a href="http://sam.zoy.org/wtfpl/">WTFPL</a>.</p>
+
+{% for post in site.tags.poem %}
+<div>
+<h2>{{ post.title }}</h2>
+<pre>{{ content }}</pre>
+</div>
+{% endfor %}
