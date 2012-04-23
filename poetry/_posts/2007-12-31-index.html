@@ -21,9 +21,8 @@ tags:
 <div>
 <!--	<input type="text" placeholder="Hledat podle názvu..." />-->
 	<ul>
-		{% for post in site.tags.poem limit:1 %}
-		<li>zatím <a href="{{ post.url }}" title="{{ post.title }}">poslední</a> kousek</li>
-		{% endfor %}
+		{% assign last_poem = site.tags.poem | last %}
+		<li>zatím <a href="{{ last_poem.url }}" title="{{ last_poem.title }}">poslední</a> kousek</li>
 		<li><a href="all-in-one.html" target="_blank">všechny</a> na jedné straně <span class="badge badge-success">{{ site.tags.poem | size }}</span></li>
 	</ul>
 </div>
