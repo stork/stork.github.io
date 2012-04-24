@@ -20,7 +20,7 @@ tags:
 </div>
 <!--	<input type="text" placeholder="Hledat podle názvu..." />-->
 {% for post in site.tags.poem %}
-<div>
+<div id="{{ post.slug }}">
 <h2>{{ post.title }} <a class="headerlink" title="Permanentní odkaz na tento nadpis" href="#{{ post.slug }}">¶</a></h2>
 <pre>{{ post.content }}</pre>
 </div>

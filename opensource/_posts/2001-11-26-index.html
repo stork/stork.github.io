@@ -10,7 +10,7 @@ tags:
 </div>
 
 {% for post in site.tags.page %}
-<div>
+<div id="{{ post.slug }}">
 	<h2>{{ post.title }} <a class="headerlink" title="Permalink to this headline" href="#{{ post.slug }}">¶</a></h2>
 	{{ post.content }}
 </div>
