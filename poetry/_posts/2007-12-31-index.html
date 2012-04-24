@@ -22,5 +22,7 @@ tags:
 <article id="{{ post.slug }}">
 <h2>{{ post.title }} <a class="headerlink" title="Permanentní odkaz na tento nadpis" href="#{{ post.slug }}">¶</a></h2>
 <pre>{{ post.content }}</pre>
+{% if post.tags contains 'noauthor' %}<div class="alert alert-info">Převzato, autor neznámý.</div>{% endif %}
+{% if post.extlink %}<div class="alert alert-info"><a href="{{ post.extlink }}" title="Související informace">{{ post.extlink }}</a></div>{% endif %}
 </article>
 {% endfor %}
