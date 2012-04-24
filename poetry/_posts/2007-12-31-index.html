@@ -15,15 +15,13 @@ tags:
 		<li>neposkytuji záruku na jejich kvalitu</li>
 		<li>zříkám se odpovědnosti za případné následky na čtenářích</li>
 		<li>vše, co v této sekci najdete, smíte šířit a/nebo upravovat dle vlastního uvážení, ve smyslu licence <a href="http://sam.zoy.org/wtfpl/">WTFPL</a></li>
-		<li>při žádném z mých <span class="badge badge-success">{{ site.tags.poem | size }}</span> výronů tvořivosti nebylo usmrceno ani netrpělo žádné zvíře</li>
+		<li>při žádném z mých <span class="badge badge-success">{{ site.tags.poem | size }}</span> výronů tvořivosti nezemřelo ani netrpělo žádné zvíře</li>
 	</ul>
 </div>
-<div>
 <!--	<input type="text" placeholder="Hledat podle názvu..." />-->
-	<ul>
-		{% for post in site.tags.poem limit:1 %}
-		<li>prozatím <a href="{{ post.url }}" title="{{ post.title }}">poslední</a> kousek</li>
-		{% endfor %}
-		<li><a href="all-in-one.html" target="_blank">všechny</a> na jedné straně</li>
-	</ul>
+{% for post in site.tags.poem %}
+<div>
+<h2>{{ post.title }}</h2>
+<pre>{{ post.content }}</pre>
 </div>
+{% endfor %}
