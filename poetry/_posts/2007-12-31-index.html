@@ -18,7 +18,6 @@ tags:
 		<li>při žádném z mých <span class="badge badge-success">{{ site.tags.poem | size }}</span> výronů tvořivosti nezemřelo ani netrpělo žádné zvíře</li>
 	</ul>
 </div>
-<!--	<input type="text" placeholder="Hledat podle názvu..." />-->
 {% for post in site.tags.poem %}
 <article id="{{ post.slug }}">
 <h2>{{ post.title }} <a class="headerlink" title="Permanentní odkaz na tento nadpis" href="#{{ post.slug }}">¶</a></h2>
