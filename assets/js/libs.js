@@ -6,3 +6,4 @@ layout: nil
 {% include js/bootstrap-typeahead.min.js %}
 {% include js/prettify.js %}
 {% include js/sammy-latest.min.js %}
+{% include js/sammy.googleanalytics-latest.min.js %}
