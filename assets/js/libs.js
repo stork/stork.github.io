@@ -7,3 +7,5 @@ layout: nil
 {% include js/prettify.js %}
 {% include js/sammy-latest.min.js %}
 {% include js/sammy.googleanalytics-latest.min.js %}
+{% include js/sammy.storage-latest.min.js %}
+{% include js/sammy.title-latest.min.js %}
