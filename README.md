@@ -1,1 +1,1 @@
-personal site [stork.github.com](http://stork.github.com/)
+personal site [stork.github.io](http://stork.github.io/)
