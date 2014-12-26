@@ -14,7 +14,9 @@
 						{% if page.categories[0] == post.categories[0] %}
 							{% assign current = 'active' %}
 						{% endif %}
+						{% if post.categories[0] != 'poetry' %}
 						<li class="{{ current }}"><a href="{{ post.url }}" rel="nofollow">{{ post.title }}</a></li>
+						{% endif %}
 					{% endfor %}
 					</ul>
 					{% if page.categories[0] == 'poetry' %}
