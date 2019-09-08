@@ -1,6 +1,5 @@
 permalink: /:categories/:title.html
 auto: true
-pygments: true
 description: "Software Architect in Web Development World"
 keywords:
  - Software Architect
