@@ -2,31 +2,7 @@
 layout: default
 title: Home
 ---
-<div class="hero-unit">
-	<p>
-		Adrenaline fan, avionics engineer, bodyguard, boxer, business/general/project/technical
-		manager, climber, engineer of military radars and guidance computers, gardener, horseman,
-		joiner, mason, network/server administrator, poet, real-estate agent, roofer, scuba diver,
-		skid steer loader engineman, software architect/developer, songster, system integrator,
-		tramp, truck driver, UN soldier, worker at heights...
-	</p>
-	<ul>
-		<li>jedná se pouze o <strong>amatérské pokusy</strong> o poetično</li>
-		<li>nevydávám je za umělecká díla</li>
-		<li>neposkytuji záruku na jejich kvalitu</li>
-		<li>zříkám se odpovědnosti za případné následky na čtenářích</li>
-		<li>vše, co v této sekci najdete, smíte šířit a/nebo upravovat dle vlastního uvážení, ve smyslu licence <a href="http://www.wtfpl.net/">WTFPL</a></li>
-		<li>při žádném z následujících <span class="badge badge-success">{{ site.tags.poem | size }}</span> výronů tvořivosti nezemřelo ani netrpělo žádné zvíře</li>
-	</ul>
-</div>
 <div class="well">
-	<p>
-		Adrenaline fan, avionics engineer, bodyguard, boxer, business/general/project/technical
-		manager, climber, engineer of military radars and guidance computers, gardener, horseman,
-		joiner, mason, network/server administrator, poet, real-estate agent, roofer, scuba diver,
-		skid steer loader engineman, software architect/developer, songster, system integrator,
-		tramp, truck driver, UN soldier, worker at heights...
-	</p>
 	<ul>
 		<li>jedná se pouze o <strong>amatérské pokusy</strong> o poetično</li>
 		<li>nevydávám je za umělecká díla</li>
@@ -35,16 +11,20 @@ title: Home
 		<li>vše, co v této sekci najdete, smíte šířit a/nebo upravovat dle vlastního uvážení, ve smyslu licence <a href="http://www.wtfpl.net/">WTFPL</a></li>
 		<li>při žádném z následujících <span class="badge badge-success">{{ site.tags.poem | size }}</span> výronů tvořivosti nezemřelo ani netrpělo žádné zvíře</li>
 	</ul>
+	<p>
+		Sincerely yours, adrenaline fan, avionics engineer, bodyguard, boxer, business/general/project/technical/release
+		manager, climber, engineer of military radars and guidance computers, gardener, horseman,
+		joiner, mason, network/server administrator, poet, real-estate agent, roofer, scuba diver,
+		skid steer loader engineman, software architect/developer, songster, system integrator,
+		tramp, truck driver, UN soldier, worker at heights...
+	</p>
 </div>
 
-<div class="row">
-	<div class="span6">
-		<h2>Poetry (Czech)</h2>
-		<p><a href="http://www.wtfpl.net/">WTFPL</a> licensed rhymes and other bashful attempts to say something unspeakable, for Czech speakers only.</p>
-		<p><a class="btn" href="/poetry/index.html" rel="nofollow">View Poems <span class="badge badge-success">{{ site.tags.poem | size }}</span></a></p>
-	</div>
-	<div class="span6">
-		<h2>Postscript</h2>
-		<p>There is nothing I can't do, just things I didn't tried yet or will try to not do them again. Don't expect (and better stay away from) half-heartedness, injustice and violence.</p>
-	</div>
-</div>
+{% for post in site.tags.poem %}
+<article id="{{ post.slug }}">
+	<h2>{{ post.title }} <a class="headerlink" title="Permanentní odkaz na tento nadpis" href="#{{ post.slug }}">¶</a></h2>
+	<pre>{{ post.content }}</pre>
+	{% if post.tags contains 'noauthor' %}<div class="alert alert-info">Převzato, autor neznámý.</div>{% endif %}
+	{% if post.extlink %}<div class="alert alert-info"><a href="{{ post.extlink }}" title="Související informace">{{ post.extlink }}</a></div>{% endif %}
+</article>
+{% endfor %}
