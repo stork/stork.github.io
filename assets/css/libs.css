@@ -3,4 +3,3 @@ layout: nil
 ---
 {% include css/bootstrap.min.css %}
 {% include css/bootstrap-responsive.min.css %}
-{% include css/prettify.css %}
