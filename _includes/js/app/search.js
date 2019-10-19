@@ -1,6 +1,3 @@
----
-	layout: nil
----
 $(function() {
 	$('#search-poems').typeahead({
 		source: poems,
