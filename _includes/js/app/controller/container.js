@@ -1,14 +1,33 @@
 $(function() {
-	$.sammy('#container', function() {
+	$.sammy('#container', 'Common', function() {
 
-//		this.debug = true;
-		this.disable_push_state = true;
+		this.bind("run", function() {
+			$.app.model.Poem.load(poems);
+		});
 
-		this.notFound = function() {};
+		this.helpers({
+			renderPoem: function(id) {
+				$("article", this.$element()).hide();
+
+				if (typeof id == 'undefined' || !$.app.model.Poem.exists(id)) {
+					id = $.app.model.Poem.first().id();
+					//TODO set location
+				}
+
+				$("article#" + id, this.$element()).show();
+
+				//TODO set title
+			}
+		});
+
+		this.get('/', function() {
+			$("div.well", this.$element()).show();
+			this.renderPoem();
+		});
 
 		this.get('#:id', function() {
-			var id = this.params.id;
-			this.log('POEM NAMED ' + id);
+			$("div.well", this.$element()).hide();
+			this.renderPoem(this.params.id);
 		});
 	}).run();
 });
