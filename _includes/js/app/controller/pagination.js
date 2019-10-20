@@ -34,7 +34,7 @@ $(function() {
 				// command == all/one
 //TODO save settings
 				this.redirect("#" + this.poem(id).id());
-			},
+			}
 		});
 
 		this.get('/', function() {
