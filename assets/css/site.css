@@ -18,6 +18,6 @@ h6:hover .headerlink {
 	line-height: normal;
 }
 
-#pagination {
+.pagination-panel {
 	display: none;
 }
