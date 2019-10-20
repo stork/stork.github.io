@@ -1,1 +1,1 @@
-var poems = [{% for post in site.tags.poem %}{id:'{{ post.slug }}',name:'{{ post.title }}'}{% if forloop.last %}];{% else %},{% endif %}{% endfor %}
+var poems = [{% for post in site.tags.poem %}{id:'{{ post.slug }}',name:'{{ post.title | uri_escape }}',content:'{{ post.content | uri_escape }}'}{% unless forloop.last %},{% endunless %}{% endfor %}];
