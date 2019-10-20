@@ -5,7 +5,5 @@
 		{% assign words = words | push: word %}
 	{% endfor %}
 {% endfor %}
-{% assign unique_words = words | uniq %}
-var nonunique = {{ words | size }};
-var unique = {{ unique_words | size }};
-var words = {{ unique_words | jsonify }};
+{% assign words = words | uniq | sort %}
+var words = {{ words | jsonify }};
