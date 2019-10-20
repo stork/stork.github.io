@@ -1,15 +1,17 @@
 $(function() {
 	$.sammy('#container', function() {
 
+		this.disable_push_state = true;
+
 		this.notFound = function() {
 			this.log('SAMMY not found');
 		};
 
 		this.bind('run', function() {
-			this.log('EVENT run');
+			Sammy.log('EVENT run');
 		});
 		this.bind('load', function() {
-			this.log('EVENT load');
+			Sammy.log('EVENT load');
 		});
 		this.bind('lookup-route', function() {
 			this.log('EVENT lookup-route');
