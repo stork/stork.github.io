@@ -13,10 +13,6 @@ $(function() {
 				var el = this.$element();
 				var poem = this.poem(id);
 
-				if (id !== poem.id()) {
-//TODO set location but do not re-run route for it
-				}
-
 				this.title(poem.attr("name"));
 
 				if (this.config('display') === 'all') {
