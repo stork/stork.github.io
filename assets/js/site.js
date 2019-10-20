@@ -8,3 +8,4 @@ layout: nil
 {% include js/app/controller/component/common.js %}
 {% include js/app/controller/container.js %}
 {% include js/app/controller/pagination.js %}
+{% include js/app/controller/well.js %}
