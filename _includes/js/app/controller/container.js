@@ -1,5 +1,5 @@
 $(function() {
-	$.sammy('#container', 'Common', 'Title', function() {
+	$.sammy('#container', 'Common', 'Title', 'GoogleAnalytics', function() {
 		this.setTitle(function(title) {
 			return [title, " | Žblebty"].join('');
 		});
