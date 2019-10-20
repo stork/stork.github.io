@@ -13,13 +13,13 @@ $(function() {
 				var el = this.$element();
 				var poem = this.poem(id);
 
-				if (id != poem.id()) {
+				if (id !== poem.id()) {
 //TODO set location but do not re-run route for it
 				}
 
 				this.title(poem.attr("name"));
 
-				if (this.store('config').get('display') === 'all') {
+				if (this.config('display') === 'all') {
 					$("article", el).show();
 				} else {
 					$("article", el).hide();
@@ -37,8 +37,6 @@ $(function() {
 
 		this.get('#:id', function() {
 			this.renderPoem(this.params.id);
-this.log("CONT:")
-console.dir(this.store('config').keys());
 		});
 	}).run();
 });

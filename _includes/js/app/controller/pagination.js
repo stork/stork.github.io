@@ -1,6 +1,5 @@
 $(function() {
 	$.sammy('#pagination', 'Common', function() {
-
 		this.bind("run", function() {
 //TODO get settings for adjusting rendering all/one
 			this.$element().show();
@@ -32,7 +31,7 @@ $(function() {
 				all.attr("href", "#/all/" + poem.id());
 				one.hide();
 				one.attr("href", "#/one/" + poem.id());
-				if (this.store('config').get('display') === 'all') {
+				if (this.config('display') === 'all') {
 					one.show();
 				} else {
 					all.show();
@@ -40,7 +39,7 @@ $(function() {
 			},
 			displayCommand: function(command, id) {
 				if (command === 'all' || command === 'one') {
-					this.store('config').set('display', command);
+					this.config('display', command);
 				}
 				this.redirect("#" + this.poem(id).id());
 			}
@@ -60,8 +59,6 @@ $(function() {
 
 		this.get('#:id', function() {
 			this.paginate(this.params.id);
-this.log("PAG:")
-console.dir(this.store('config').keys());
 		});
 	}).run();
 });

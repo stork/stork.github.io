@@ -8,8 +8,12 @@
 	Sammy.Common = function() {
 		this.debug = true;
 		this.disable_push_state = true;
-		this.use('Storage', {name: 'config', type: 'local'});
+
 		this.notFound = function() {};
+
+		this.use('Storage');
+		this.store('config', {element: 'body', type: 'local'});
+
 		this.helpers({
 			poem: function(id) {
 				if (typeof id == 'undefined' || !$.app.model.Poem.exists(id)) {

@@ -9,10 +9,7 @@ $(function() {
 		});
 
 		this.get('#:id', function() {
-			var id = this.params.id;
-			var poem = this.poem(id);
-
-			if (id != poem.id()) {
+			if (this.config('display') === 'all' || id !== this.poem(this.params.id).id()) {
 				this.$element().show();
 			} else {
 				this.$element().hide();
