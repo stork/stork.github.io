@@ -1,5 +1,8 @@
 $(function() {
 	$.sammy('#container', 'Common', 'Title', function() {
+		this.setTitle(function(title) {
+			return [title, " | Žblebty"].join('');
+		});
 
 		this.bind("run", function() {
 			$.app.model.Poem.load(poems);
@@ -16,9 +19,8 @@ $(function() {
 //TODO set location but do not re-run route for it
 				}
 
+				this.title(poem.attr("name"));
 				$("article#" + poem.id(), el).show();
-
-//TODO set title
 			}
 		});
 
