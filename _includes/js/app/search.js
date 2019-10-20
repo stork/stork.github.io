@@ -7,4 +7,4 @@ $(function() {
 			window.location.hash = val;
 		}
 	});
-})
+});

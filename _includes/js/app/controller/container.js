@@ -1,30 +1,14 @@
 $(function() {
 	$.sammy('#container', function() {
 
-		this.debug = true;
+//		this.debug = true;
 		this.disable_push_state = true;
 
-		this.notFound = function() {
-			this.log('SAMMY not found');
-		};
-/*
-		this.get('/', function() {
-			this.log('SITE home');
-		});
-
-		this.get('#/', function() {
-			this.log('SAMMY home');
-		});
+		this.notFound = function() {};
 
 		this.get('#:id', function() {
-			this.log('POEM NAMED ' + this.params.id);
-			this.refresh();
+			var id = this.params.id;
+			this.log('POEM NAMED ' + id);
 		});
-
-		this.get(/\#(.*)/, function() {
-			this.log('POEM REGEX ' + this.params['splat']);
-			this.refresh();
-		});
-*/
 	}).run();
 });
