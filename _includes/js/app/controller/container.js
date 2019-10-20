@@ -7,7 +7,7 @@ $(function() {
 		this.notFound = function() {
 			this.log('SAMMY not found');
 		};
-
+/*
 		this.get('/', function() {
 			this.log('SITE home');
 		});
@@ -18,11 +18,13 @@ $(function() {
 
 		this.get('#:id', function() {
 			this.log('POEM NAMED ' + this.params.id);
+			this.refresh();
 		});
 
 		this.get(/\#(.*)/, function() {
 			this.log('POEM REGEX ' + this.params['splat']);
+			this.refresh();
 		});
-
+*/
 	}).run();
 });
