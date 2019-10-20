@@ -2,15 +2,15 @@ $(function() {
 	$.sammy('#pagination', 'Common', function() {
 
 		this.bind("run", function() {
-			this.$element().show();
+			$(".pagination-panel").show();
 		});
 
 		this.helpers({
 			paginate: function(id) {
+				var el = $(".pagination-panel");
 				var poem = this.poem(id);
-
-				var prev = $('a[rel="prev"]', this.$element());
-				var next = $('a[rel="next"]', this.$element());
+				var prev = $('a[rel="prev"]', el);
+				var next = $('a[rel="next"]', el);
 
 				prev.show();
 				next.show();
