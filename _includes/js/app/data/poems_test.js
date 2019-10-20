@@ -1,1 +1,2 @@
-var poems_test = {{ site.tags.poem | jsonify }};
+var poems_test = [{% for post in site.tags.poem %}{id:'{{ post.slug }}',name:'{{ post.title }}',body:'{{ post.content }}'}{% unless forloop.last %},{% endunless %}{% endfor %}];
+
