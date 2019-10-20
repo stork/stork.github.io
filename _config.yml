@@ -1,8 +1,30 @@
+main_title: "Žblebty"
+description: "Draw Me A Sheep"
+keywords:
+ - adrenaline fan
+ - avionics engineer
+ - bodyguard
+ - boxer
+ - business/general/project/technical/release manager
+ - climber
+ - engineer of military radars and guidance computers
+ - gardener
+ - horseman
+ - janitor
+ - joiner
+ - mason
+ - network/server administrator
+ - poet
+ - real-estate agent
+ - roofer
+ - scuba diver
+ - skid steer loader engineman
+ - software architect/developer
+ - songster
+ - system integrator
+ - tramp
+ - truck driver
+ - UN soldier
+ - worker at heights
 permalink: /:categories/:title.html
 auto: true
-description: "Software Architect in Web Development World"
-keywords:
- - Software Architect
- - Web Developer
- - CakePHP Developer
-main_title: "Lubomír Štork"
