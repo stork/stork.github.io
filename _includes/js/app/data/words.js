@@ -15,7 +15,7 @@
 		{% assign tmp = tmp | remove: "'" %}
 		{% assign tmp = tmp | remove: '`' %}
 		{% assign thesize = tmp | size %}
-		{% if (thesize > 0) %}
+		{% if thesize > 0 %}
 			{% assign tmp = tmp | downcase %}
 			{% assign words = words | push: tmp %}
 		{% endif %}
