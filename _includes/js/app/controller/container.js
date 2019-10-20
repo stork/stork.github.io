@@ -1,5 +1,5 @@
 $(function() {
-	$.sammy('#container', 'Common', function() {
+	$.sammy('#container', 'Common', 'Title', function() {
 
 		this.bind("run", function() {
 			$.app.model.Poem.load(poems);
@@ -7,6 +7,7 @@ $(function() {
 
 		this.helpers({
 			renderPoem: function(id) {
+//TODO get settings for adjusting rendering all/one
 				var el = this.$element();
 				$("article", el).hide();
 
@@ -20,6 +21,9 @@ $(function() {
 //TODO set title
 			}
 		});
+
+		this.get('#/:command', function() {});
+		this.get('#/:command/:id', function() {});
 
 		this.get('/', function() {
 			this.renderPoem();

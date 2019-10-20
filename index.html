@@ -16,6 +16,11 @@ layout: default
 	</p>
 </div>
 
+<div class="pagination-switch pull-right">
+	<a rel="all" href="#/all" title="Zobrazit vše na jedné stránce">zobrazit vše</a>
+	<a rel="one" href="#/one" title="Listovat po jednotlivých záznamech">listovat</a>
+</div>
+
 {% for post in site.tags.poem %}
 <article id="{{ post.slug }}">
 	<h2>{{ post.title }} <a class="headerlink" title="Permanentní odkaz na tento nadpis" href="#{{ post.slug }}">¶</a></h2>
