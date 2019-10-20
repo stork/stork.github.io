@@ -12,6 +12,7 @@
 		{% assign tmp = tmp | remove: '!' %}
 		{% assign tmp = tmp | remove: '?' %}
 		{% assign tmp = tmp | remove: '“' %}
+		{% assign tmp = tmp | remove: '”' %}
 		{% assign tmp = tmp | remove: "'" %}
 		{% assign tmp = tmp | remove: '`' %}
 		{% assign tmp = tmp | remove: '0' %}
