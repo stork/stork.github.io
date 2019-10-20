@@ -37,20 +37,20 @@ $(function() {
 			}
 		});
 
-		this.get('/', function() {
-			this.paginate();
-		});
-
-		this.get('#:id', function() {
-			this.paginate(this.params.id);
-		});
-
 		this.get('#/:command', function() {
 			this.displayCommand(this.params.command);
 		});
 
 		this.get('#/:command/:id', function() {
 			this.displayCommand(this.params.command, this.params.id);
+		});
+
+		this.get('/', function() {
+			this.paginate();
+		});
+
+		this.get('#:id', function() {
+			this.paginate(this.params.id);
 		});
 	}).run();
 });
