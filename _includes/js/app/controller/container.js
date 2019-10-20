@@ -7,26 +7,28 @@ $(function() {
 
 		this.helpers({
 			renderPoem: function(id) {
-				$("article", this.$element()).hide();
+				var el = this.$element();
+				$("article", el).hide();
 
 				if (typeof id == 'undefined' || !$.app.model.Poem.exists(id)) {
-					id = $.app.model.Poem.first().id();
-					//TODO set location
+					$("div.well", el).show();
+					id = this.poem().id();
+//TODO set location
+				} else {
+					$("div.well", el).hide();
 				}
 
-				$("article#" + id, this.$element()).show();
+				$("article#" + id, el).show();
 
-				//TODO set title
+//TODO set title
 			}
 		});
 
 		this.get('/', function() {
-			$("div.well", this.$element()).show();
 			this.renderPoem();
 		});
 
 		this.get('#:id', function() {
-			$("div.well", this.$element()).hide();
 			this.renderPoem(this.params.id);
 		});
 	}).run();
