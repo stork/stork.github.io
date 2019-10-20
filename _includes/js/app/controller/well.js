@@ -9,7 +9,7 @@ $(function() {
 			var id = this.params.id;
 			var poem = this.poem(id);
 
-			if (id != poem.id() || poem.isFirst() || poem.isLast()) {
+			if (id != poem.id()) {
 				this.$element().show();
 			} else {
 				this.$element().hide();
