@@ -2,7 +2,15 @@
 {% for post in site.tags.poem %}
 	{% assign postwords = post.content | split:' ' %}
 	{% for word in postwords %}
-		{% assign word = word | remove: '.' | remove: ',' | remove: '"' | remove: '(' | remove: ')' | remove: ';' | remove: '-' | remove: '!' | remove: '?' %}
+		{% assign word = word | remove: '.' %}
+		{% assign word = word | remove: ',' %}
+		{% assign word = word | remove: '"' %}
+		{% assign word = word | remove: '(' %}
+		{% assign word = word | remove: ')' %}
+		{% assign word = word | remove: ';' %}
+		{% assign word = word | remove: '-' %}
+		{% assign word = word | remove: '!' %}
+		{% assign word = word | remove: '?' %}
 		{% assign words = words | push: word %}
 	{% endfor %}
 {% endfor %}
