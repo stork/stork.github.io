@@ -2,7 +2,7 @@ $(function() {
 	$.sammy('#container', function() {
 
 		this.debug = true;
-//		this.disable_push_state = true;
+		this.disable_push_state = true;
 
 		this.notFound = function() {
 			this.log('SAMMY not found');
