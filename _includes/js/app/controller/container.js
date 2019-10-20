@@ -42,17 +42,21 @@ $(function() {
 			this.log('EVENT location-changed');
 		});
 
+		this.get('/', function() {
+			this.log('SITE home');
+		});
+
 		this.get('#/', function() {
 			this.log('SAMMY home');
 		});
-
+/*
 		this.get('#:id', function() {
 			this.log('POEM NAMED ' + this.params.id);
 		});
-/*
+*/
 		this.get(/\#(.*)/, function() {
 			this.log('POEM REGEX ' + this.params['splat']);
 		});
-*/
+
 	}).run();
 });
