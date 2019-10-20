@@ -9,7 +9,7 @@ $(function() {
 		});
 
 		this.get('#:id', function() {
-			if (this.config('display') === 'all' || id !== this.poem(this.params.id).id()) {
+			if (this.config('display') === 'all' || this.params.id !== this.poem(this.params.id).id()) {
 				this.$element().show();
 			} else {
 				this.$element().hide();
