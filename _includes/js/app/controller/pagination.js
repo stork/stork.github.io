@@ -12,13 +12,11 @@ $(function() {
 				var poem = this.poem(id);
 				var prev = $('a[rel="prev"]', this.$element());
 				var next = $('a[rel="next"]', this.$element());
-
-				$('.pagination-switch a[rel="all"]').attr("href", "#/all/" + poem.id());
-				$('.pagination-switch a[rel="one"]').attr("href", "#/one/" + poem.id());
+				var all = $('.pagination-switch a[rel="all"]');
+				var one = $('.pagination-switch a[rel="one"]');
 
 				prev.show();
 				next.show();
-
 				if (poem.isFirst()) {
 					prev.hide();
 					next.attr("href", "#" + poem.next().id());
@@ -29,10 +27,21 @@ $(function() {
 					prev.attr("href", "#" + poem.prev().id());
 					next.attr("href", "#" + poem.next().id());
 				}
+
+				all.hide();
+				all.attr("href", "#/all/" + poem.id());
+				one.hide();
+				one.attr("href", "#/one/" + poem.id());
+				if (this.store('config').get('display') === 'all') {
+					one.show();
+				} else {
+					all.show();
+				}
 			},
 			displayCommand: function(command, id) {
-				// command == all/one
-//TODO save settings
+				if (command === 'all' || command === 'one') {
+					this.store('config').set('display', command);
+				}
 				this.redirect("#" + this.poem(id).id());
 			}
 		});
@@ -51,6 +60,8 @@ $(function() {
 
 		this.get('#:id', function() {
 			this.paginate(this.params.id);
+this.log("PAG:")
+console.dir(this.store('config').keys());
 		});
 	}).run();
 });

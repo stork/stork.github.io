@@ -8,6 +8,7 @@
 	Sammy.Common = function() {
 		this.debug = true;
 		this.disable_push_state = true;
+		this.use('Storage', {name: 'config', type: 'local'});
 		this.notFound = function() {};
 		this.helpers({
 			poem: function(id) {

@@ -10,17 +10,21 @@ $(function() {
 
 		this.helpers({
 			renderPoem: function(id) {
-//TODO get settings for adjusting rendering all/one
 				var el = this.$element();
-				$("article", el).hide();
-
 				var poem = this.poem(id);
+
 				if (id != poem.id()) {
 //TODO set location but do not re-run route for it
 				}
 
 				this.title(poem.attr("name"));
-				$("article#" + poem.id(), el).show();
+
+				if (this.store('config').get('display') === 'all') {
+					$("article", el).show();
+				} else {
+					$("article", el).hide();
+					$("article#" + poem.id(), el).show();
+				}
 			}
 		});
 
@@ -33,6 +37,8 @@ $(function() {
 
 		this.get('#:id', function() {
 			this.renderPoem(this.params.id);
+this.log("CONT:")
+console.dir(this.store('config').keys());
 		});
 	}).run();
 });
