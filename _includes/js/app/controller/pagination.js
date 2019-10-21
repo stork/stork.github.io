@@ -1,7 +1,6 @@
 $(function() {
 	$.sammy('#pagination', 'Common', function() {
 		this.bind("run", function() {
-//TODO get settings for adjusting rendering all/one
 			this.$element().show();
 			$(".pagination-switch").show();
 		});
