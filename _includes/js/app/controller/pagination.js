@@ -10,6 +10,7 @@ $(function() {
 				var poem = this.poem(id);
 				var prev = $('a[rel="prev"]', this.$element());
 				var next = $('a[rel="next"]', this.$element());
+				var current = $('a[rel="current"]', this.$element());
 				var all = $('.pagination-switch a[rel="all"]');
 				var one = $('.pagination-switch a[rel="one"]');
 
@@ -22,14 +23,17 @@ $(function() {
 					next.show();
 				}
 
-				if (prev.is(":visible")()) {
+				if (prev.is(":visible")) {
 					prev.attr("href", "#" + poem.prev().id());
 					prev.attr("title", poem.prev().attr("name"));
 				}
-				if (next.is(":visible")()) {
+				if (next.is(":visible")) {
 					next.attr("href", "#" + poem.next().id());
 					next.attr("title", poem.next().attr("name"));
 				}
+
+				var counter = $("div.counter", "article#" + poem.id());
+				current.text(counter.text());
 
 				all.hide();
 				one.hide();

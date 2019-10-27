@@ -26,7 +26,8 @@ layout: default
 <article id="{{ post.slug }}">
 	<h2>{{ post.title }} <a class="headerlink" title="Permanentní odkaz na tento nadpis" href="#{{ post.slug }}">¶</a></h2>
 	<pre>{{ post.content }}</pre>
-	<p><strong>{{ post.date | date_to_string }}</strong> <i>({{ forloop.rindex }}/{{ post_cnt }})</i></p>
+	<p>{{ post.date | date_to_string }}</p>
+	<div class="counter" style="display:none">{{ forloop.rindex }}</div>
 	{% if post.published %}<div class="alert alert-success"><a target="_blank" href="{{ post.published }}" title="Publikováno">{{ post.published }}</a></div>{% endif %}
 	{% if post.extlink %}<div class="alert alert-info"><a target="_blank" href="{{ post.extlink }}" title="Související informace">{{ post.extlink }}</a></div>{% endif %}
 	{% if post.tags contains 'noauthor' %}<div class="alert alert-warning">Převzato, autor neznámý.</div>{% endif %}
