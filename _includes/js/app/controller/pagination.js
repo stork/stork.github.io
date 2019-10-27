@@ -13,26 +13,31 @@ $(function() {
 				var all = $('.pagination-switch a[rel="all"]');
 				var one = $('.pagination-switch a[rel="one"]');
 
-				prev.show();
-				next.show();
-				if (poem.isFirst()) {
-					prev.hide();
-					next.attr("href", "#" + poem.next().id());
-				} else if (poem.isLast()) {
-					next.hide();
+				prev.hide();
+				next.hide();
+				if (!poem.isFirst()) {
+					prev.show();
+				}
+				if (!poem.isLast()) {
+					next.show();
+				}
+
+				if (prev.is(":visible")()) {
 					prev.attr("href", "#" + poem.prev().id());
-				} else {
-					prev.attr("href", "#" + poem.prev().id());
+					prev.attr("title", poem.prev().attr("name"));
+				}
+				if (next.is(":visible")()) {
 					next.attr("href", "#" + poem.next().id());
+					next.attr("title", poem.next().attr("name"));
 				}
 
 				all.hide();
-				all.attr("href", "#/all/" + poem.id());
 				one.hide();
-				one.attr("href", "#/one/" + poem.id());
 				if (this.config('display') === 'all') {
+					one.attr("href", "#/one/" + poem.id());
 					one.show();
 				} else {
+					all.attr("href", "#/all/" + poem.id());
 					all.show();
 				}
 			},
