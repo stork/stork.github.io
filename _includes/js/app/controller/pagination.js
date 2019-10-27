@@ -7,29 +7,49 @@ $(function() {
 
 		this.helpers({
 			paginate: function(id) {
+				$('p.counter').hide();
+
 				var poem = this.poem(id);
 				var prev = $('a[rel="prev"]', this.$element());
 				var next = $('a[rel="next"]', this.$element());
 				var all = $('.pagination-switch a[rel="all"]');
 				var one = $('.pagination-switch a[rel="one"]');
+				var counter = $('article#' + poem.id() + ' p.counter');
+				var cPrev = $('a[rel="prev"]', counter);
+				var cNext = $('a[rel="next"]', counter);
+				var href, name;
 
 				prev.hide();
 				next.hide();
+				cPrev.hide();
+				cNext.hide();
 				if (!poem.isFirst()) {
 					prev.show();
+					cPrev.show();
 				}
 				if (!poem.isLast()) {
 					next.show();
+					cNext.show();
 				}
 
 				if (prev.is(":visible")) {
-					prev.attr("href", "#" + poem.prev().id());
-					prev.attr("title", poem.prev().attr("name"));
+					href = "#" + poem.prev().id();
+					name = poem.prev().attr("name");
+					prev.attr("href", href);
+					prev.attr("title", name);
+					cPrev.attr("href", href);
+					cPrev.attr("text", name);
 				}
 				if (next.is(":visible")) {
-					next.attr("href", "#" + poem.next().id());
-					next.attr("title", poem.next().attr("name"));
+					href = "#" + poem.next().id();
+					name = poem.next().attr("name");
+					next.attr("href", href);
+					next.attr("title", name);
+					cNext.attr("href", href);
+					cNext.attr("text", name);
 				}
+
+				counter.show();
 
 				all.hide();
 				one.hide();
