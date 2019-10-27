@@ -38,7 +38,7 @@ $(function() {
 					prev.attr("href", href);
 					prev.attr("title", name);
 					cPrev.attr("href", href);
-					cPrev.attr("html", name);
+					cPrev.text(name);
 				}
 				if (next.is(":visible")) {
 					href = "#" + poem.next().id();
@@ -46,7 +46,7 @@ $(function() {
 					next.attr("href", href);
 					next.attr("title", name);
 					cNext.attr("href", href);
-					cNext.attr("html", name);
+					cNext.text(name);
 				}
 
 				all.hide();
