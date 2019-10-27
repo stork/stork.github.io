@@ -14,7 +14,7 @@ $(function() {
 				var next = $('a[rel="next"]', this.$element());
 				var all = $('.pagination-switch a[rel="all"]');
 				var one = $('.pagination-switch a[rel="one"]');
-				var counter = $('article#' + poem.id() + ' p.counter');
+				var counter = $('#' + poem.id() + ' > p.counter');
 				var cPrev = $('a[rel="prev"]', counter);
 				var cNext = $('a[rel="next"]', counter);
 				var href, name;
@@ -49,10 +49,6 @@ $(function() {
 					cNext.attr("text", name);
 				}
 
-				if (this.config('display') === 'one') {
-					counter.show();
-				}
-
 				all.hide();
 				one.hide();
 				if (this.config('display') === 'all') {
@@ -61,6 +57,7 @@ $(function() {
 				} else {
 					all.attr("href", "#/all/" + poem.id());
 					all.show();
+					counter.show();
 				}
 			},
 			displayCommand: function(command, id) {
