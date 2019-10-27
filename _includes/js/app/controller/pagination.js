@@ -49,7 +49,9 @@ $(function() {
 					cNext.attr("text", name);
 				}
 
-				counter.show();
+				if (this.config('display') === 'one') {
+					counter.show();
+				}
 
 				all.hide();
 				one.hide();
