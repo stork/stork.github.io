@@ -2,7 +2,7 @@ $(function() {
 	$.app = $.app || {};
 	$.app.model = $.app.model || {};
 
-	$.app.model.PoemBackup = Model('poem', function(klass, proto) {
+	$.app.model.PoemBackup = Model('poem_backup', function(klass, proto) {
 		this.constructor.unique_key = "id";
 		this.use($.app.behavior.Paginated, klass, proto);
 
