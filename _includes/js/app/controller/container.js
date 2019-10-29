@@ -5,7 +5,7 @@ $(function() {
 		});
 
 		this.bind("run", function() {
-			$.app.model.Poem.load(poems);
+			$.app.model.PoemBackup.load(poems);
 		});
 
 		this.helpers({

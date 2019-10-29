@@ -16,10 +16,10 @@
 
 		this.helpers({
 			poem: function(id) {
-				if (typeof id == 'undefined' || !$.app.model.Poem.exists(id)) {
-					return $.app.model.Poem.first();
+				if (typeof id == 'undefined' || !$.app.model.PoemBackup.exists(id)) {
+					return $.app.model.PoemBackup.first();
 				}
-				return $.app.model.Poem.find(id);
+				return $.app.model.PoemBackup.find(id);
 			}
 		});
 	};
