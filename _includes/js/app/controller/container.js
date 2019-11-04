@@ -5,14 +5,7 @@ $(function() {
 		});
 
 		this.bind("run", function() {
-			var lastModified = $("meta[http-equiv='last-modified']").attr("content");
-			var savedModified = this.config("savedModified");
-			if (typeof lastModified != undefined && lastModified !== savedModified) {
-//				this.config("savedModified", lastModified);
-//				this.store('config').clear("savedModified");
-			} 
-
-			$.app.model.PoemBackup.load(poems);
+			$.app.model.Poem.load(poems);
 		});
 
 		this.helpers({

@@ -3,15 +3,15 @@ $(function() {
 	$.app.model = $.app.model || {};
 
 	$.app.model.Poem = Model('poem', function(klass, proto) {
-		this.persistence(Model.localStorage);
+		this.constructor.unique_key = "id";
+		this.use($.app.behavior.Paginated, klass, proto);
 
-		this.use($.app.behavior.Associated, klass, proto, {
-			hasMany: [
-				{ name: 'usages', model: 'Usage', foreignKey: 'poem_id' }
-			],
-			hasAndBelongsToMany: [
-				{ name: 'words', model: 'Word', through: 'Usage', foreignKey: 'poem_id', associationForeignKey: 'word_id' }
-			]
+		this.extend({
+			load: function(data) {
+				for (var i = 0, length = data.length; i < length; i++) {
+					$.app.model.Poem.add(new $.app.model.Poem(data[i]));
+				}
+			}
 		});
 	});
 });
