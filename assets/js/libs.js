@@ -1,12 +1,10 @@
 ---
 layout: nil
 ---
-{% include js/jquery.min.js %}
-{% include js/bootstrap.min.js %}
-{% include js/bootstrap-typeahead.min.js %}
-{% include js/sammy-latest.min.js %}
-{% include js/sammy.googleanalytics-latest.min.js %}
-{% include js/sammy.json-latest.min.js %}
-{% include js/sammy.storage-latest.min.js %}
-{% include js/sammy.title-latest.min.js %}
+{% include js/bootstrap-autocomplete.min.js %}
+{% include js/sammy-0.7.6.min.js %}
+{% include js/sammy.googleanalytics-0.7.6.min.js %}
+{% include js/sammy.json-0.7.6.min.js %}
+{% include js/sammy.storage-0.7.6.min.js %}
+{% include js/sammy.title-0.7.6.min.js %}
 {% include js/js-model-0.11.0.min.js %}
