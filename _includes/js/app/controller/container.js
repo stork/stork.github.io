@@ -1,5 +1,5 @@
 $(function() {
-	$.sammy('#container', 'Common', 'Title', 'GoogleAnalytics', function() {
+	$.sammy('#container', 'Common', 'NoCommand', 'Title', 'GoogleAnalytics', function() {
 		this.setTitle(function(title) {
 			return [title, " | Žblebty"].join('');
 		});
@@ -23,9 +23,6 @@ $(function() {
 				}
 			}
 		});
-
-		this.get('#/:command', function() {});
-		this.get('#/:command/:id', function() {});
 
 		this.get('/', function() {
 			this.renderPoem();

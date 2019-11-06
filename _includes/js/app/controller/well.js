@@ -1,9 +1,5 @@
 $(function() {
-	$.sammy('#well', 'Common', function() {
-
-		this.get('#/:command', function() {});
-		this.get('#/:command/:id', function() {});
-
+	$.sammy('#well', 'Common', 'NoCommand', function() {
 		this.get('/', function() {
 			this.$element().show();
 		});
