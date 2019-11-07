@@ -1,5 +1,5 @@
 $(function() {
-	$.sammy('#pagination', 'Common', function() {
+	$.sammy('#paginator', 'Common', function() {
 		this.bind("run", function() {
 			this.$element().show();
 			$(".pagination-switch").show();
@@ -19,35 +19,40 @@ $(function() {
 				var cNext = $('a[rel="next"]', counter);
 				var href, name;
 
-				prev.hide();
-				next.hide();
+				prev.addClass('disabled');
+				next.addClass('disabled');
 				cPrev.hide();
 				cNext.hide();
 				if (!poem.isFirst()) {
-					prev.show();
+					prev.removeClass('disabled');
 					cPrev.show();
 				}
 				if (!poem.isLast()) {
-					next.show();
+					next.removeClass('disabled');
 					cNext.show();
 				}
 
-				if (prev.is(":visible")) {
+				href = "#";
+				name = "";
+				if (!prev.hasClass('disabled')) {
 					href = "#" + poem.prev().id();
 					name = poem.prev().attr("name");
-					prev.attr("href", href);
-					prev.attr("title", name);
-					cPrev.attr("href", href);
-					cPrev.html("&laquo;&nbsp;" + name);
 				}
-				if (next.is(":visible")) {
+				prev.attr("href", href);
+				prev.attr("title", name);
+				cPrev.attr("href", href);
+				cPrev.html("&laquo;&nbsp;" + name);
+
+				href = "#";
+				name = "";
+				if (!next.hasClass('disabled')) {
 					href = "#" + poem.next().id();
 					name = poem.next().attr("name");
-					next.attr("href", href);
-					next.attr("title", name);
-					cNext.attr("href", href);
-					cNext.html(name + "&nbsp;&raquo;");
 				}
+				next.attr("href", href);
+				next.attr("title", name);
+				cNext.attr("href", href);
+				cNext.html(name + "&nbsp;&raquo;");
 
 				all.hide();
 				one.hide();

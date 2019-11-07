@@ -1,21 +1,34 @@
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-				<a class="brand" href="/">{{ site.main_title }}</a>
-				<div id="pagination">
-					<a class="brand" rel="prev" href="#" title="Předchozí">&lt;&lt;</a>
-					<a class="brand" rel="next" href="#" title="Další">&gt;&gt;</a>
-				</div>
-				<div class="nav-collapse collapse" aria-expanded="false" style="height: 1px;">
-					<form class="navbar-search pull-left" action="">
-						<input id="search-poems" class="search-query" type="text" placeholder="Hledat podle názvu...">
-					</form>
-				</div>
+	<nav class="navbar navbar-expand navbar-dark fixed-top bg-dark">
+			<a class="navbar-brand" href="/">Žblebty</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navigace">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul id="paginator" class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" rel="prev" href="#" title="Předchozí">&lt;&lt;</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" rel="next" href="#" title="Další">&gt;&gt;</a>
+					</li>
+				</ul>
+				<form class="form-inline mt-2 mt-md-0">
+	<!--
+					<input id="search-poems" class="form-control mr-sm-2" type="text" placeholder="Hledat podle názvu..." aria-label="Hledat podle názvu...">
+	-->
+				</form>
 			</div>
-		</div>
+		</nav>
+	<!--
+	
+	<a class="navbar-brand" href="/">Žblebty</a>
+	
+	<input id="search-poems" class="form-control mr-sm-2" type="text" placeholder="Hledat podle názvu..." aria-label="Hledat podle názvu...">
+	
+	<ul id="nav-pagination"
+	<div id="pagination">
+		<a class="nav-link"
+		<a class="brand" rel="prev" href="#" title="Předchozí">&lt;&lt;</a>
+		<a class="brand" rel="next" href="#" title="Další">&gt;&gt;</a>
 	</div>
+	-->

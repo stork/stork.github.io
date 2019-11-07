@@ -2,7 +2,7 @@
 layout: default
 ---
 {% assign post_cnt = site.tags.poem | size %}
-<div class="well" id="well">
+<div class="jumbotron" id="well">
 	<ul>
 		<li>POZOR, amatérské pokusy o poetično</li>
 		<li>nevydávám je za umělecká díla</li>
@@ -17,15 +17,15 @@ layout: default
 	</p>
 </div>
 
-<div class="pagination-switch pull-right">
+<div class="pagination-switch float-right">
 	<a rel="all" href="#/all" title="Zobrazit vše na jedné stránce">zobrazit vše</a>
 	<a rel="one" href="#/one" title="Listovat po jednotlivých záznamech">listovat</a>
 </div>
 
 {% for post in site.tags.poem %}
 <article id="{{ post.slug }}">
-	<h2>{{ post.title }} <a class="headerlink" title="Permanentní odkaz na tento nadpis" href="#{{ post.slug }}">¶</a></h2>
-	<pre>{{ post.content }}</pre>
+	<h2><samp>{{ post.title }}</samp> <a class="headerlink" title="Permanentní odkaz na tento nadpis" href="#{{ post.slug }}">¶</a></h2>
+	<pre><code>{{ post.content }}</code></pre>
 	<p>{{ post.date | date_to_string }}</p>
 	{% if post.published %}<div class="alert alert-success"><a target="_blank" href="{{ post.published }}" title="Publikováno">{{ post.published }}</a></div>{% endif %}
 	{% if post.extlink %}<div class="alert alert-info"><a target="_blank" href="{{ post.extlink }}" title="Související informace">{{ post.extlink }}</a></div>{% endif %}

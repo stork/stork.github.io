@@ -1,6 +1,9 @@
-body,
+body {
+	min-height: 75rem;
+	padding-top: 4.5rem;
+}
 article {
-	padding-top: 50px;
+	padding-top: 2rem;
 }
 .headerlink {
 	display: none;
@@ -17,7 +20,6 @@ h6:hover .headerlink {
 	padding: 0;
 	line-height: normal;
 }
-
-#pagination, .pagination-switch {
+.pagination-switch {
 	display: none;
 }
