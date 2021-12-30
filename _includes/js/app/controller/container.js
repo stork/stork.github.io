@@ -18,8 +18,9 @@ $(function() {
 				if (this.config('display') === 'all') {
 					$("article", el).show();
 				} else {
-					$("article", el).hide();
+//					$("article", el).hide();
 					$("article#" + poem.id(), el).show();
+                                        $("article", el).not("#" + poem.id()).hide();
 				}
 			}
 		});
