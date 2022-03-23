@@ -58,7 +58,7 @@ $(function() {
 					case 'unarchived':
 					case 'published':
 					case 'unpublished':
-						all.prepend(this.config('display') + " ").show();
+						all.prepend('(FILTER ' + this.config('display') + ') ').show();
 						break;
 					case 'all':
 						one.show();
