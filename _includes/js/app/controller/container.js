@@ -26,7 +26,7 @@ $(function() {
 					case 'unpublished':
 						this.title('FILTER ' + display);
 						$("article", el).hide();
-						$.app.model.Poem.byAttribute(display, false).each(function() {
+						$.app.model.Poem.byAttribute(display.substring(2), false).each(function() {
 							$("article#" + this.attr("id"), el).show();
 						});
 						break;
