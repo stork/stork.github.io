@@ -68,17 +68,17 @@ $(function() {
 				}
 			},
 			displayCommand: function(command, id) {
+				id = id || false;
+				var uri = id ? "#" + this.poem(id).id() : "/";
 				switch (command) {
 					case 'archived':
 					case 'unarchived':
 					case 'published':
 					case 'unpublished':
-						this.config('display', command);
-						break;
 					case 'all':
 					case 'one':
 						this.config('display', command);
-						this.redirect("#" + this.poem(id).id());
+						this.redirect(uri);
 						break;
 				}
 			}
