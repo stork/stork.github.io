@@ -10,17 +10,36 @@ $(function() {
 
 		this.helpers({
 			renderPoem: function(id) {
-				var el = this.$element();
-				var poem = this.poem(id);
+				var el = this.$element(),
+					display = this.config('display'),
+					show = function() {
+						$("article#" + this.attr("id"), el).show();
+					};
 
-				this.title(poem.attr("name"));
-
-				if (this.config('display') === 'all') {
-					$("article", el).show();
-				} else {
-//					$("article", el).hide();
-					$("article#" + poem.id(), el).show();
-                                        $("article", el).not("#" + poem.id()).hide();
+				switch (display) {
+					case 'archived':
+					case 'published':
+						this.title('FILTER ' + display);
+						$("article", el).hide();
+						$.app.model.Poem.byAttribute(display, true).each(show);
+						break;
+					case 'unarchived':
+					case 'unpublished':
+						this.title('FILTER ' + display);
+						$("article", el).hide();
+						$.app.model.Poem.byAttribute(display, false).each(show);
+						break;
+					case 'all':
+						this.title(this.poem(id).attr("name"));
+						$("article", el).show();
+						break;
+					case 'one':
+						var poem = this.poem(id),
+							hash = "#" + poem.id();
+						this.title(poem.attr("name"));
+						$("article" + hash, el).show();
+						$("article", el).not(hash).hide();
+						break;
 				}
 			}
 		});

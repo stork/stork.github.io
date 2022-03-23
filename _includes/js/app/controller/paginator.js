@@ -62,12 +62,21 @@ $(function() {
 				} else {
 					all.attr("href", "#/all/" + poem.id());
 					all.show();
-					counter.show();
+					if (this.config('display') === 'one') {
+						counter.show();
+					}
 				}
 			},
 			displayCommand: function(command, id) {
-				if (command === 'all' || command === 'one') {
-					this.config('display', command);
+				switch (command) {
+					case 'archived':
+					case 'unarchived':
+					case 'published':
+					case 'unpublished':
+					case 'all':
+					case 'one':
+						this.config('display', command);
+						break;
 				}
 				this.redirect("#" + this.poem(id).id());
 			}
