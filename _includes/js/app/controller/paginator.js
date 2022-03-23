@@ -73,12 +73,14 @@ $(function() {
 					case 'unarchived':
 					case 'published':
 					case 'unpublished':
+						this.config('display', command);
+						break;
 					case 'all':
 					case 'one':
 						this.config('display', command);
+						this.redirect("#" + this.poem(id).id());
 						break;
 				}
-				this.redirect("#" + this.poem(id).id());
 			}
 		});
 
