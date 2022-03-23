@@ -5,6 +5,7 @@ $(function() {
 		});
 
 		this.bind("run", function() {
+			this.config('display', this.config('display') || 'one');
 			$.app.model.Poem.load(poems);
 		});
 
