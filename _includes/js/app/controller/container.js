@@ -19,8 +19,6 @@ $(function() {
 						this.title('FILTER ' + display);
 						$("article", el).hide();
 						$.app.model.Poem.byAttribute(display, true).each(function() {
-console.log(this.id());
-console.log(this.attr("id"));
 							$("article#" + this.attr("id"), el).show();
 						});
 						break;
@@ -29,8 +27,6 @@ console.log(this.attr("id"));
 						this.title('FILTER ' + display);
 						$("article", el).hide();
 						$.app.model.Poem.byAttribute(display, false).each(function() {
-console.log(this.id());
-console.log(this.attr("id"));
 							$("article#" + this.attr("id"), el).show();
 						});
 						break;
