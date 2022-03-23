@@ -11,7 +11,10 @@ $(function() {
 				flag = flag || false;
 				return this.select(function() {
 					var val = this.attr(attr) || false;
-					return flag ? val !== false : val !== false;
+					if (flag) {
+						return val !== false;
+					}
+					return val === false;
 				});
 			},
 			load: function(data) {

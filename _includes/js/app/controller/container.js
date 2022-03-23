@@ -11,23 +11,28 @@ $(function() {
 		this.helpers({
 			renderPoem: function(id) {
 				var el = this.$element(),
-					display = this.config('display'),
-					show = function() {
-						$("article#" + this.attr("id"), el).show();
-					};
+					display = this.config('display');
 
 				switch (display) {
 					case 'archived':
 					case 'published':
 						this.title('FILTER ' + display);
 						$("article", el).hide();
-						$.app.model.Poem.byAttribute(display, true).each(show);
+						$.app.model.Poem.byAttribute(display, true).each(function() {
+console.log(this.id());
+console.log(this.attr("id"));
+							$("article#" + this.attr("id"), el).show();
+						});
 						break;
 					case 'unarchived':
 					case 'unpublished':
 						this.title('FILTER ' + display);
 						$("article", el).hide();
-						$.app.model.Poem.byAttribute(display, false).each(show);
+						$.app.model.Poem.byAttribute(display, false).each(function() {
+console.log(this.id());
+console.log(this.attr("id"));
+							$("article#" + this.attr("id"), el).show();
+						});
 						break;
 					case 'all':
 						this.title(this.poem(id).attr("name"));
