@@ -23,7 +23,7 @@ layout: default
 </div>
 
 {% for post in site.tags.poem %}
-<article id="{{ post.slug }}">
+<article id="{{ post.slug }}"{% if forloop.first %} style="display:block"{% endif %}>
 	<h2><samp>{{ post.title }}</samp> <a class="headerlink" title="Permanentní odkaz na tento nadpis" href="#{{ post.slug }}">¶</a></h2>
 	<pre><code>{{ post.content }}</code></pre>
 	<p>{{ post.date | date_to_string }}</p>
