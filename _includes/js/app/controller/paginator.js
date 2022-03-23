@@ -9,15 +9,15 @@ $(function() {
 			paginate: function(id) {
 				$('p.counter').hide();
 
-				var poem = this.poem(id);
-				var prev = $('a[rel="prev"]', this.$element());
-				var next = $('a[rel="next"]', this.$element());
-				var all = $('.pagination-switch a[rel="all"]');
-				var one = $('.pagination-switch a[rel="one"]');
-				var counter = $('#' + poem.id() + ' > p.counter');
-				var cPrev = $('a[rel="prev"]', counter);
-				var cNext = $('a[rel="next"]', counter);
-				var href, name;
+				var poem = this.poem(id),
+					prev = $('a[rel="prev"]', this.$element()),
+					next = $('a[rel="next"]', this.$element()),
+					all = $('.pagination-switch a[rel="all"]'),
+					one = $('.pagination-switch a[rel="one"]'),
+					counter = $('#' + poem.id() + ' > p.counter'),
+					cPrev = $('a[rel="prev"]', counter),
+					cNext = $('a[rel="next"]', counter),
+					href, name;
 
 				prev.addClass('disabled');
 				next.addClass('disabled');
@@ -38,10 +38,8 @@ $(function() {
 					href = "#" + poem.prev().id();
 					name = poem.prev().attr("name");
 				}
-				prev.attr("href", href);
-				prev.attr("title", name);
-				cPrev.attr("href", href);
-				cPrev.html("&laquo;&nbsp;" + name);
+				prev.attr("href", href).attr("title", name);
+				cPrev.attr("href", href).html("&laquo;&nbsp;" + name);
 
 				href = "#";
 				name = "";
@@ -49,19 +47,32 @@ $(function() {
 					href = "#" + poem.next().id();
 					name = poem.next().attr("name");
 				}
-				next.attr("href", href);
-				next.attr("title", name);
-				cNext.attr("href", href);
-				cNext.html(name + "&nbsp;&raquo;");
+				next.attr("href", href).attr("title", name);
+				cNext.attr("href", href).html(name + "&nbsp;&raquo;");
 
-				all.hide();
-				one.hide();
+				all.hide().attr("href", "#/all/" + poem.id());
+				one.hide().attr("href", "#/one/" + poem.id());
+
+				switch (this.config('display')) {
+					case 'archived':
+					case 'unarchived':
+					case 'published':
+					case 'unpublished':
+						all.prepend(this.config('display') + " ").show();
+						break;
+					case 'all':
+						one.show();
+						break;
+					case 'one':
+						all.show();
+						counter.show();
+						break;
+				}
+
 				if (this.config('display') === 'all') {
-					one.attr("href", "#/one/" + poem.id());
-					one.show();
+					one.attr("href", "#/one/" + poem.id()).show();
 				} else {
-					all.attr("href", "#/all/" + poem.id());
-					all.show();
+					all.attr("href", "#/all/" + poem.id()).show();
 					if (this.config('display') === 'one') {
 						counter.show();
 					}
